@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="30 seconds">
+		
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	     <file>logs/lgcy_now.log</file>
+	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	            <!-- daily rollover -->
+	            <fileNamePattern>logs/lgcy_post.%d{yyyyMMdd}.log
+	            </fileNamePattern>
+	            <!-- keep 30 days' worth of history -->
+	            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <!--  <pattern> [%thread]  %d{HH:mm:ss} [%thread] %-5level %logger{35} - %msg%n</pattern>  -->
+            <pattern>
+	            %d{HH:mm:ss} %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+	            %d{HH:mm:ss} %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    
+    <logger name="org.springframework" level="INFO" />
+    <root level="INFO">
+        <appender-ref ref="STDOUT" /> 
+        <appender-ref ref="FILE" /> 
+    </root>
+</configuration>

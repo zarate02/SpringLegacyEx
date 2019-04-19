@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+						http://www.springframework.org/schema/jdbc 
+						http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+							
+	<!-- DB : DataSource -->  	
+	<bean id="db119S" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@192.168.0.50:1521:ERSSUS"/>
+        <property name="username" value="erss"/>
+        <property name="password" value="thqkd119"/>
+	</bean>
+	
+	<!-- DB : Mybatis -->
+	<bean id="mainSSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	  <property name="dataSource" ref="db119S" />
+	  <property name="configLocation" value="classpath:/SQL/CONFIG.xml"/>
+	  <property name="mapperLocations" value="classpath:/SQL/SQL/*.xml"/>
+	</bean>
+	<bean id = "mainSSession" class = "org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<constructor-arg index="0" ref="mainSSessionFactory"/>
+	</bean>
+	
+</beans>
