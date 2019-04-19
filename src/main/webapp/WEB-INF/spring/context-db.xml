@@ -14,7 +14,7 @@
 	<!-- DB : DataSource -->  	
 	<bean id="db119S" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-		<property name="url" value="jdbc:oracle:thin:@192.168.0.50:1521:ERSSUS"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:ERSSUS"/>
         <property name="username" value="erss"/>
         <property name="password" value="thqkd119"/>
 	</bean>
