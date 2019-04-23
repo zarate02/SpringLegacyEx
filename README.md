@@ -9,4 +9,4 @@
 
 ## 기타
 
-MQTT 연결 : https://github.com/zarate02/SpringLegacyEx/tree/master/src/main/java/com/winitech/util/mqtt
+- MQTT 연결 : https://github.com/zarate02/SpringLegacyEx/tree/master/src/main/java/com/winitech/util/mqtt
