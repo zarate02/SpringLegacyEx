@@ -12,11 +12,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MqttRecvier implements MqttCallback{
 
+	/*MQTT 접속유실*/
 	@Override
 	public void connectionLost(Throwable cause) {
 		log.error("[MQTT RCIV] connectionLost");
 	}
 
+	/*MQTT 메시지 정상수진*/
 	@Override
 	public void messageArrived(String topic, MqttMessage message) throws Exception {
 		byte[] payload = message.getPayload();
@@ -29,6 +31,7 @@ public class MqttRecvier implements MqttCallback{
 		
 	}
 
+	/*MQTT 수신응답(Qos의 영향받음) */
 	@Override
 	public void deliveryComplete(IMqttDeliveryToken token) {
 		log.info("[MQTT RCIV] deliveryComplete");

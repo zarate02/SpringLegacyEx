@@ -32,6 +32,7 @@ public class MqttSender {
 			log.error("[Mqtt Send] not Connected");
 		
 		else {
+			/*문자 -> 객체*/
 			Gson gson = new GsonBuilder().create();
 		    String obj = gson.toJson(vo);
 		    

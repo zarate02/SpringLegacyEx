@@ -16,6 +16,8 @@ public class MqttCron {
 	@Scheduled(fixedDelay=10000)
 	public void mqttjob() {
 		log.info("q check");
+		
+		/*스케쥴러 10초간격으로 접속확인*/
 		mi.connect();		
 	}
 
