@@ -2,7 +2,7 @@
 
 ## 설정파일
 
-- 기본설정 : https://github.com/zarate02/SpringLegacyEx/blob/master/src/main/webapp/WEB-INF/spring/context-cmm.xml
+- 기본설정 : ../spring/context-cmm.xml
 - 데이터베이스 : https://github.com/zarate02/SpringLegacyEx/blob/master/src/main/webapp/WEB-INF/spring/context-db.xml
 - 스케쥴러 : https://github.com/zarate02/SpringLegacyEx/blob/master/src/main/webapp/WEB-INF/spring/context-task.xml
 - 로그 : https://github.com/zarate02/SpringLegacyEx/blob/master/src/main/resources/logback.xml
