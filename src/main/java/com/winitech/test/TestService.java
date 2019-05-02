@@ -26,7 +26,6 @@ public class TestService {
 		} catch(Exception e) {
 			return "fail";
 		}
-		
 	}
 
 	public String TestUpdate(Map<String,Object> parm) {
