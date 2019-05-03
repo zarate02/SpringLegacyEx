@@ -4,9 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@ToString
 @Getter
 @Setter
+@ToString
 public class TestVo {
 	String testval1;
 	int testval2;
