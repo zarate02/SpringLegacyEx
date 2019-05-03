@@ -17,7 +17,7 @@
 ## 3. 빠르게 스프링 Legacy 시작하기
 
 ### 1) 사전준비물
-개발툴 : SpringToolSuite 이클립스 STS 3.x (https://spring.io/tools3)<br>
+개발툴 : SpringToolSuite 이클립스 STS 3.x (https://spring.io/tools3) (see all version 클릭후 )<br>
 자바 : Version 8이상 (https://jdk.java.net/java-se-ri/8)<br>
 
 ### 2) 프로젝트 git에서 내려받기
