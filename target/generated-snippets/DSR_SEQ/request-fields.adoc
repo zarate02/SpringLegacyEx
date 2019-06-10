@@ -1,0 +1,8 @@
+|===
+|Path|Type|Description
+
+|`+DSR_SEQ+`
+|`+String+`
+|재난번호
+
+|===

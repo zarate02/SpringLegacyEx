@@ -5,7 +5,7 @@ import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 import com.google.gson.Gson;
-import com.winitech.test.TestVo;
+import com.winitech.test.vo.TestVo;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -8,8 +8,8 @@
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
-		<java-version>1.6</java-version>
-		<org.springframework-version>4.2.7.RELEASE</org.springframework-version>
+		<java-version>1.8</java-version>
+		<org.springframework-version>4.3.24.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
@@ -93,8 +93,8 @@
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -111,11 +111,35 @@
 	
 		<!-- Test -->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.7</version>
-			<scope>test</scope>
-		</dependency>        
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.12</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.mockito</groupId>
+		    <artifactId>mockito-all</artifactId>
+		    <version>1.9.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency> 
+		<dependency>
+		    <groupId>com.jayway.jsonpath</groupId>
+		    <artifactId>json-path</artifactId>
+		    <version>2.4.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.restdocs</groupId>
+		    <artifactId>spring-restdocs-mockmvc</artifactId>
+		    <version>1.2.6.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.hamcrest</groupId>
+		    <artifactId>hamcrest-all</artifactId>
+		    <version>1.3</version>
+		</dependency>
 		
 		<!-- add dependency -->
 		
@@ -185,9 +209,78 @@
 		</dependency>
 		
 		
+        <!-- Groovy -->
+        <dependency>
+		    <groupId>org.codehaus.groovy</groupId>
+		    <artifactId>groovy-all</artifactId>
+		    <version>2.5.7</version>
+		    <type>pom</type>
+		</dependency>
+		
+		
 	</dependencies>
     <build>
         <plugins>
+        
+        	<plugin>
+		    <!-- (2) -->
+			    <groupId>org.asciidoctor</groupId>
+			    <artifactId>asciidoctor-maven-plugin</artifactId>
+			    <version>1.5.8</version>
+		        <executions>
+		            <execution>
+		                <id>generate-docs</id>
+		                <phase>prepare-package</phase>
+		                <goals>
+		                    <goal>process-asciidoc</goal>
+		                </goals>
+		                <configuration>
+		                    <backend>html</backend>
+		                    <doctype>book</doctype>
+		                </configuration>
+		            </execution>
+		        </executions>
+		        <dependencies>
+		        <!-- (3) -->
+		            <dependency>
+		                <groupId>org.springframework.restdocs</groupId>
+		                <artifactId>spring-restdocs-asciidoctor</artifactId>
+		                <version>2.0.2.RELEASE</version>
+		            </dependency>
+		        </dependencies>
+		    </plugin>
+		    <plugin>
+		    <!-- (4) -->
+		        <artifactId>maven-resources-plugin</artifactId>
+		        <version>2.7</version>
+		        <executions>
+		            <execution>
+		                <id>copy-resources</id>
+		                <phase>prepare-package</phase>
+		                <goals>
+		                    <goal>copy-resources</goal>
+		                </goals>
+		                <configuration> 
+		                    <outputDirectory>
+		                        ${project.build.outputDirectory}/static/docs
+		                    </outputDirectory>
+		                    <resources>
+		                        <resource>
+		                            <directory>							
+		                            	${project.build.directory}/generated-docs
+		                            </directory>
+		                        </resource>
+		                    </resources>
+		                </configuration>
+		            </execution>
+		        </executions>
+		    </plugin>
+        
+        
+        
+        
+        
+        
             <plugin>
                 <artifactId>maven-eclipse-plugin</artifactId>
                 <version>2.9</version>

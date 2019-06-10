@@ -6,22 +6,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.winitech.util.mqtt.MqttSender;
+import com.winitech.test.service.MqttService;
 
 @Controller
 public class TestMqttContorller {
 	
-	@Resource MqttSender ms;
+	@Resource MqttService ms;
 
 	@RequestMapping("TestMq")
 	@ResponseBody
 	public String testSelect() {
 		
-		TestVo vo = new TestVo();
-		vo.setTestval1("1");
-		vo.setTestval2(2);
-		vo.setTestval3(true);
-		ms.send("test001", vo);
+		ms.send();
 		
 		return "ok";
 	}

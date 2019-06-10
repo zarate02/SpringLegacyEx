@@ -27,7 +27,7 @@
     
     <logger name="org.springframework" level="INFO" />
     <root level="INFO">
-        <appender-ref ref="STDOUT" /> 
+        <appender-ref ref="STDOUT" /> 	<!-- 배포시에는 제거 -->
         <appender-ref ref="FILE" /> 
     </root>
 </configuration>

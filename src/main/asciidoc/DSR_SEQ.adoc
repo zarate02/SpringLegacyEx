@@ -1,0 +1,12 @@
+:toc: left
+:toclevels: 1
+
+== TestSelect (테스트조회)
+=== Request Field
+include::{snippets}/DSR_SEQ/request-fields.adoc[]
+=== Example Request
+include::{snippets}/DSR_SEQ/httpie-request.adoc[]
+=== Response Field
+include::{snippets}/DSR_SEQ/response-fields.adoc[]
+=== Example Response
+include::{snippets}/DSR_SEQ/http-response.adoc[]
