@@ -33,10 +33,16 @@
 5. branch Select를 master로 택하고 Next를 누른다
 6. 경로를 선택하고 프로젝트 생성을 완료한다
 
-## 4. 각종 설정 설명
+## 4. 프로젝트 구조
 
-1. WEB.xml : https://github.com/zarate02/SpringLegacyEx/blob/master/src/main/webapp/WEB-INF/web.xml
-2. Context : https://github.com/zarate02/SpringLegacyEx/tree/master/src/main/webapp/WEB-INF/spring
-3. 기본 Controller : https://github.com/zarate02/SpringLegacyEx/blob/master/src/main/java/com/winitech/test/TestJsonContorller.java
-4. SQL Mapper : https://github.com/zarate02/SpringLegacyEx/tree/master/src/main/resources/SQL
-5. Log : https://github.com/zarate02/SpringLegacyEx/blob/master/src/main/resources/logback.xml
+- 루트컨텍스트 : src/main/webapp/WEB-INF/spring/context-*.xml
+- 서블릿컨텍스트 : src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
+- 자바컨트롤러소스 : src/main/java/com/winitech/프로젝트명/*Controller.java
+- 자바서비스소스 : src/main/java/com/winitech/프로젝트명/service/*Service.java
+- 자바테스트소스 : src/main/java/com/winitech/프로젝트명/service/test/*ServiceTest.java
+- 자바유틸소스 : src/main/java/com/winitech/util/*/*.java
+- 그루비소스 : src/main/resources/groovy/구분자/*.groovy
+- 쿼리소스 : src/maain/resources/sql/구분자/*.xml
+- asciidoc소스 : src/main/asciidoc/*.adoc
+- jsp소스 : src/main/webapp/WEB-INF/view/jsp/*/*.jsp
+- 웹외부소스 : src/main/webapp/resources/*/*
